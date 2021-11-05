@@ -1,0 +1,9 @@
+[Unit]
+Description=Stream Video
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/Robots/StreamServer.py
+
+[Install]
+WantedBy=multi-user.target
