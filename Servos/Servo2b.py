@@ -7,8 +7,7 @@ import time
 
 fPWM = 50
 i2c_address = 0x40 # (standard) adapt to your module
-servo0 = 0 # adapt to your wiring
-servo1 = 1 # 
+channel = 0 # adapt to your wiring
 a = 8.5 # adapt to your servo
 b = 2  # adapt to your servo
 
@@ -18,23 +17,33 @@ def setup():
     pwm = PWM(bus, i2c_address)
     pwm.setFreq(fPWM)
 
-def setDirection(direction, channel):
+def setDirection(direction):
     duty = a / 180 * direction + b
     pwm.setDuty(channel, duty)
-    print "channel = ", channel, " direction =", direction, "-> duty =", duty
+    print "direction =", direction, "-> duty =", duty
     time.sleep(1) # allow to settle
+
+def doHeadShake(inDirection)
+    setDirection(inDirection)
+    setDirection(inDirection+20)
+    time.sleep(1)
+    setDirection(inDirection-20)
+    timesleep(0)
    
 print "starting"
 setup()
-setDirection(11, servo1)
-setDirection(51, servo1)
-#setDirection(11, servo1)
-#setDirection(-51, servo1)
+for direction in range(0, 91, 10):
+    setDirection(direction)
+direction = 0    
+setDirection(0)   
+# try moving other servo
+pwm.setDuty(1, duty)
+time.sleep(1)
 
-for direction in range(21, 121, 10): #181
-    setDirection(direction, servo0)
-direction = 21    
-setDirection(21, servo0)    
+
+# do a headshake
+
+ 
 print "done"
   
 
