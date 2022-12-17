@@ -1,0 +1,10 @@
+use Raspberry Imager to create new sd card
+set settings to include SSH
+set up a user of pi and password of Robot13
+connect to PiLab wifi
+
+go in with Puty to a command prompt
+raspi-config to set up VNC
+set legacy camera whilst there
+
+copy Robots to the SD card
