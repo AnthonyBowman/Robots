@@ -8,3 +8,14 @@ raspi-config to set up VNC
 set legacy camera whilst there
 
 copy Robots to the SD card
+install services using .sh file StreamServer and UMC for now
+enable services
+start services
+test StreamServer service using VLC
+
+edit /etc/mosquitto/mosquitto.conf
+append to the bottom of the file
+a listener 1883
+b allow_anonymous true
+
+copy the correct Hal layer to hal.py - MotoZero for Night Crawler
