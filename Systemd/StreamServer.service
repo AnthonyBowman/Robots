@@ -1,12 +1,9 @@
 [Unit]
-Description=Stream Video
-After=network-online.target
+Description=StreamVideo
+After=multi-user.target UMC.service
 
 [Service]
-Type=idle
 ExecStart=/usr/bin/python3 /home/pi/Robots/VideoStream/StreamServer.py
-Restart=Always
-User=pi
 
 [Install]
-WantedBy=network-online.target
+WantedBy=multi-user.target
