@@ -6,16 +6,26 @@ connect to PiLab wifi
 go in with Puty to a command prompt
 raspi-config to set up VNC
 set legacy camera whilst there
+update screen resolution if you want
 
-copy Robots to the SD card
-install services using .sh file StreamServer and UMC for now
-enable services
-start services
-test StreamServer service using VLC
+# get mosquitto working on bullseye
+
+pi@robot:~/Robots/ShellScripts $ sudo sh InstallMosquitto.sh
 
 edit /etc/mosquitto/mosquitto.conf
 append to the bottom of the file
 a listener 1883
 b allow_anonymous true
 
+copy Robots to the SD card
 copy the correct Hal layer to hal.py - MotoZero for Night Crawler
+
+install services using .sh file StreamServer and UMC for now
+enable services
+Reboot
+
+test StreamServer service using VLC
+test remote control using the RoverDriver c# program
+
+Note: use InstallServices.sh to install services
+Note: use EnableServices.sh to enable them for next boot
