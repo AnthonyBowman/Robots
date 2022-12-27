@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO  
+import time
 
 # 1st motor
 in1 = 21
@@ -38,25 +39,33 @@ def forward():
     GPIO.output(in2,GPIO.LOW)
     GPIO.output(in3,GPIO.HIGH)
     GPIO.output(in4,GPIO.LOW)
+    time.sleep(1)
+    stop()
 
 def backward():
     GPIO.output(in1,GPIO.LOW)
     GPIO.output(in2,GPIO.HIGH)
     GPIO.output(in3,GPIO.LOW)
     GPIO.output(in4,GPIO.HIGH)
-    
+    time.sleep(1)
+    stop()
+
 def left():
     GPIO.output(in1,GPIO.LOW)
     GPIO.output(in2,GPIO.HIGH)
     GPIO.output(in3,GPIO.HIGH)
     GPIO.output(in4,GPIO.LOW)
+    time.sleep(1)
+    stop()
 
 def right():
     GPIO.output(in1,GPIO.HIGH)
     GPIO.output(in2,GPIO.LOW)
     GPIO.output(in3,GPIO.LOW)
     GPIO.output(in4,GPIO.HIGH)
-    
+    time.sleep(1)
+    stop()
+
 def stop():
     GPIO.output(in1,GPIO.LOW)
     GPIO.output(in2,GPIO.LOW)
