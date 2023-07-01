@@ -43,10 +43,11 @@ try:
             decode_array[3] = data[8];
             decode_array[4] = 0;
             numeric_string = ''.join(decode_array)
-            motor_power = int(numeric_string)
+            time_int = int(numeric_string)
 
         elif data[0] == 'B'
                 # back
+                
         elif :
             # anything else
 
