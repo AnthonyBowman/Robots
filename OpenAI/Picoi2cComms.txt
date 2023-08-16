@@ -1,0 +1,22 @@
+import machine
+
+# Create an I2C object
+i2c = machine.I2C(0)
+
+# Set the slave address of the Pico
+i2c.init(I2C.SLAVE, addr=0x12)
+
+# Define a buffer to store incoming data
+buffer = bytearray(64)
+
+while True:
+    # Wait for data to be received over the I2C bus
+    length = i2c.readfrom_into(0x12, buffer)
+    if length > 0:
+        # Convert the received data to a string
+        message = buffer[:length].decode('utf-8')
+        print('Received message:', message)
+        
+        # Reverse the message and send it back to the I2C master
+        response = message[::-1]
+        i2c.writeto(0x12, response.encode('utf-8'))
