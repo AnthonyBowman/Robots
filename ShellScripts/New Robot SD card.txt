@@ -1,14 +1,16 @@
 use Raspberry Imager to create new sd card
 set settings to include SSH
-set up a user of pi and password of Robot13
-connect to PiLab wifi
+set up a user of pi and password of robot13
+connect to PiLab wifi or Crossbow
 
 go in with Puty to a command prompt
 raspi-config to set up VNC
 set legacy camera whilst there
 update screen resolution if you want
 
-copy Robots to the SD card
+set up Github and clone the Robots repository or Routers depending on application
+now we have all the files we need.
+
 copy the correct Hal layer to hal.py - MotoZero for Night Crawler
 
 # get mosquitto working on bullseye
