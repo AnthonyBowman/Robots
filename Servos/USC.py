@@ -38,11 +38,11 @@ def do_commands (payload):
 
         if command == 'U':
             # move up
-            hal.moveUpDown (10)
+            hal.moveUpDown (-10)
 
         if command == 'D':
             # move down
-            hal.moveUpDown (-10)
+            hal.moveUpDown (10)
 
 # main body of the program although do commands is where it really
 # all happens.
