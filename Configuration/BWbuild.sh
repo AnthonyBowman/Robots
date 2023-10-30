@@ -97,12 +97,17 @@ if [ "$install_mosquitto" = "y" ]; then
   sudo apt update
   sudo apt install -y mosquitto mosquitto-clients
   
+  # Add Python module
+  sudo pip3 install paho-mqtt
+
   # Configure Mosquitto
   sudo mosquitto_passwd -c /etc/mosquitto/passwd username
   sudo chown mosquitto:mosquitto /etc/mosquitto/passwd
 
   # Update config 
-  echo "allow_anonymous false" | sudo tee -a /etc/mosquitto/mosquitto.conf
+  echo "listener 1883" | sudo tee -a /etc/mosquitto/mosquitto.conf
+  echo "allow_anonymous true" | sudo tee -a /etc/mosquitto/mosquitto.conf
+  
   echo "password_file /etc/mosquitto/passwd" | sudo tee -a /etc/mosquitto/mosquitto.conf
 
   # Enable and restart service
