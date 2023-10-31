@@ -41,18 +41,18 @@ class MyApp(App):
         main_layout.add_widget(disconnect_button)
   
                 # Create a container for video display
-        #video_container = FloatLayout()
-        #video_container.add_widget(Label(text='Video Display'))
+        video_container = FloatLayout()
+        video_container.add_widget(Label(text='Video Display'))
 
-       # main_layout.add_widget(video_container)
+        main_layout.add_widget(video_container)
         
 
         up_button = Button(text='Up')
         down_button = Button(text='Down')
         left_button = Button(text='Left')
         right_button = Button(text='Right')
-        #camera_controls.add_widget(up_button)
-        #camera_controls.add_widget(down_button)
+       # camera_controls.add_widget(up_button)
+       # camera_controls.add_widget(down_button)
        # camera_controls.add_widget(left_button)
        # camera_controls.add_widget(right_button)
        # layout.add_widget(camera_controls)
