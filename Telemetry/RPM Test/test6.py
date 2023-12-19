@@ -11,5 +11,5 @@ def increaserev(channel):
 g.add_event_detect(rpmpin, g.RISING, callback=increaserev)
 while True:
     sleep(1)
-    print "RPM is {0}".format(revcount*6/2)
+    print ("RPM is {0}".format(revcount*6/2))
     revcount = 0

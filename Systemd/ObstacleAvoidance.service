@@ -1,0 +1,9 @@
+[Unit]
+Description=ObstacleAvoidance
+After=multi-user.target UMC.service
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/Robots/ObstacleAvoidance/ObstacleAvoidance.py
+
+[Install]
+WantedBy=multi-user.target
