@@ -20,17 +20,17 @@ def setup():
 def setDirection(direction):
     duty = a / 180 * direction + b
     pwm.setDuty(channel, duty)
-    print "direction =", direction, "-> duty =", duty
+    print ("direction =", direction, "-> duty =", duty)
     time.sleep(1) # allow to settle
 
-def doHeadShake(inDirection)
+def doHeadShake(inDirection):
     setDirection(inDirection)
     setDirection(inDirection+20)
     time.sleep(1)
     setDirection(inDirection-20)
     timesleep(0)
    
-print "starting"
+print ("starting")
 setup()
 for direction in range(0, 91, 10):
     setDirection(direction)
@@ -44,6 +44,6 @@ time.sleep(1)
 # do a headshake
 
  
-print "done"
+print ("done")
   
 

@@ -1,0 +1,8 @@
+{
+    "board": "rp2",
+    "protocol": "picowgo",
+    "include": [
+      "**/*.py"
+    ]
+  }
+  
