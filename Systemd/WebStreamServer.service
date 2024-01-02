@@ -1,0 +1,9 @@
+[Unit]
+Description=StreamVideo
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/Desktop/WebStreamServer.py
+
+[Install]
+WantedBy=multi-user.target
